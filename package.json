@@ -25,18 +25,25 @@
     "@nestjs/core": "^7.0.0",
     "@nestjs/graphql": "^7.3.11",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/typeorm": "^7.1.0",
+    "@types/mongodb": "^3.5.20",
     "apollo-server-express": "^2.14.1",
-    "graphql": "14.0.0",
+    "graphql": "14.5.0",
     "graphql-tools": "6.0.3",
+    "husky": "^4.2.5",
+    "mongodb": "^3.5.8",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.5.4",
+    "typeorm": "^0.2.25",
+    "uuid": "^8.1.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/testing": "^7.0.0",
     "@types/express": "^4.17.3",
+    "@types/graphql": "^14.5.0",
     "@types/jest": "25.1.4",
     "@types/node": "^13.9.1",
     "@types/supertest": "^2.0.8",
@@ -48,7 +55,7 @@
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "supertest": "^4.0.2",
-    "ts-jest": "25.2.1",
+    "ts-jest": "^26.1.0",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2",
     "tsconfig-paths": "^3.9.0",
@@ -68,8 +75,9 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   },
-  "resolutions": {
-    "apollo-link-dedup": "^1.0.13",
-    "@types/graphql": "^14.0.0"
+  "husky": { 
+    "hooks": {
+       "pre-commit": "lint && npm run test"
+    }
   }
 }

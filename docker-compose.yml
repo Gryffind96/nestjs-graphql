@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    command: npm run start:dev  
+    restart: always
+    volumes:
+      - .:/usr/src/app
+    depends_on: 
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    environment:
+      # MONGO_INITDB_ROOT_USERNAME: 
+      # MONGO_INITDB_ROOT_PASSWORD: admin1234
+      MONGO_INITDB_DATABASE: school
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:

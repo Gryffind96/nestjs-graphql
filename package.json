@@ -28,6 +28,8 @@
     "@nestjs/typeorm": "^7.1.0",
     "@types/mongodb": "^3.5.20",
     "apollo-server-express": "^2.14.1",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.12.2",
     "graphql": "14.5.0",
     "graphql-tools": "6.0.3",
     "husky": "^4.2.5",
@@ -75,9 +77,9 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   },
-  "husky": { 
+  "husky": {
     "hooks": {
-       "pre-commit": "lint && npm run test"
+      "pre-commit": "npm run lint"
     }
   }
 }
